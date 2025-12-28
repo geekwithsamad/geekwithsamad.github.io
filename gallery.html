@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samad Wood Works- Luxury Furniture</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="gallery.css">
+
+</head>
+<body>
+  <div id="progressbar"></div>
+  <div id="scrollpath"></div>
+
+<div class="container">
+  <h1 class="text" data-src="img-11.jpg"><a class="text" href=""> Luxury Bed</h1></a>
+  <h1 class="text" data-src="img-12.png"><a class="text" href="">Kitchen</h1></a>
+  <h1 class="text" data-src="img-13.jpg"><a class="text" href="">Almirah</h1></a>
+  <h1 class="text" data-src="img-14.jpg"><a class="text" href="">Office</h1></a>
+  <h1 class="text" data-src="img-15.jpg"><a class="text" href="">LED Panel</h1></a>
+  <h1 class="text" data-src="img-16.jpg"><a class="text" href="">Wodern Parling</h1></a>
+  <h1 class="text" data-src="img-17.jpg"><a class="text" href="">Living Room</h1></a>
+  <h1 class="text" data-src="img-18.jpg"><a class="text" href="">Duplex Stairs</h1></a>
+  <h1 class="text" data-src="img-19.jpg"><a class="text" href="">Bathroom</h1></a>
+  <h1 class="text" data-src="img-20.jpg"><a class="text" href="">Other's</h1></a>
+  <img src="img-1.jpg" class="hover-img" alt="">
+</div>
+
+<script>
+
+let container = document.querySelector('.container');
+let img = container.querySelector('.hover-img');
+
+document.body.onmousemove = (e) =>{
+  let x = e.pageX;
+  let y = e.pageY;
+  img.style.top = y + 'px';
+  img.style.left = x + 'px';
+}
+
+container.querySelectorAll('.text').forEach(text =>{
+  text.onmousemove = () =>{
+    img.src = text.getAttribute('data-src');
+  }
+});
+
+ let progress = document.getElementById('progressbar'
+  );
+ let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function() {
+  let progressHeight = (window.pageYOffset / totalHeight) * 100;
+    progress.style.height = progressHeight + "%";
+
+   // body...
+ }
+
+
+</script>
+  
+</body>
+</html>
